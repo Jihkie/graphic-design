@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var currentfont = 0;
+		var currentfonttext = "Helvetica";
+		var changetext = function() {
+			if (currentfont == 0) {
+				document.getElementById("displaytext").style.fontFamily = "arial";
+				currentfonttext = "Arial";
+				currentfont = 1;
+			} else {
+				document.getElementById("displaytext").style.fontFamily = "helvetica";
+				currentfonttext = "Helvetica";
+				currentfont = 0;
+			}
+			document.getElementById("activefont").innerHTML = currentfonttext;
+		}
+	</script>
+</head>
+<body>
+	<h1>Current Font: <span id="activefont">Helvetica</span></h1>
+	<button type="button" onclick="changetext();">change</button>
+	<p id="displaytext" style="font-family: helvetica;">
+		ABCDEFGHIJKLMNOPQRSTUVWXYZ
+		<br>
+		abcdefghijklmnopqrstuvwxyz
+		<br>
+		1234567890
+	</p>
+</body>
+</html>
