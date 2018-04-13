@@ -1,0 +1,6 @@
+.sidenav {
+  height:100%;
+  position:fixed!important;
+  overflow:auto;
+  width:300px;
+}
