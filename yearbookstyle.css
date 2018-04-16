@@ -1,8 +1,9 @@
 .sidenav {
   height:100%;
-  position:fixed!important;
+  /*position:fixed!important;*/
   overflow:auto;
   width:300px;
+  display:block;
 }
 .panel {
   display:none;
