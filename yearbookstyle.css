@@ -6,6 +6,7 @@
   display:block;
 }
 .panel {
+  position:absolute;
   display:none;
 }
 .main-content {
