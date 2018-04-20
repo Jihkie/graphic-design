@@ -14,4 +14,12 @@
 }
 .link {
   width:100%;
+  background: rgba(255, 255, 255, .5);
+}
+.link:hover {
+  background: rgba(255, 255, 255, .8);
+}
+.navlist {
+  list-style-type:none;
+  background:blue;
 }
