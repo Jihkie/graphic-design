@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('.link').on("click", () => {
+  $('.link').click(function(){
     var panelName = $(this).attr('info');
     $('.panel').hide(0, function(){
       $('.'+panelName).show();
