@@ -3,7 +3,7 @@ $(document).ready(() => {
     $('.panel').hide(0, function(){
       $('.'+this.attr(info)).show();
     });
-  };
+  });
   
   
   
