@@ -1,5 +1,15 @@
 $(document).ready(() => {
-  $('.intro-panel').show();
+  $('.link').on("click", () => {
+    $('.panel').hide(0, function(){
+      $('.'+this.attr(info)).show();
+    }
+  }
+  
+  
+  
+  
+  
+  $('.intro').show();
   
   
 });
