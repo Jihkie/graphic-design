@@ -6,6 +6,7 @@ $(document).ready(() => {
     $('.panel').fadeOut(500, function(){
       console.log('out');
       $('.'+panelName).fadeIn(500, console.log('in'););
+      console.log('out2');
     });
   });
   
