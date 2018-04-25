@@ -3,9 +3,9 @@ $(document).ready(() => {
     console.log($(this).attr('info'));
     var panelName = $(this).attr('info');
     console.log(panelName);
-    $('.panel').fadeOut(500, function(){
+    $('.panel:visible:not(.'+panelName+')').fadeOut(500, function(){
       console.log('out');
-      $('.'+panelName).fadeIn(500, function(){console.log('in');});
+      $('.'+panelName+':hidden').fadeIn(500, function(){console.log('in');});
       console.log('out2');
     });
   });
@@ -14,7 +14,7 @@ $(document).ready(() => {
   
   
   
-  $('.intro').show();
+  //$('.intro').show();
   
   
 });
