@@ -5,7 +5,7 @@ $(document).ready(() => {
     console.log(panelName);
     $('.panel').fadeOut(500, function(){
       console.log('out');
-      $('.'+panelName).fadeIn(500, console.log('in'););
+      $('.'+panelName).fadeIn(500, function(){console.log('in');});
       console.log('out2');
     });
   });
