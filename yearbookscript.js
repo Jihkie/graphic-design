@@ -5,9 +5,9 @@ $(document).ready(() => {
     console.log(panelName);
     $('.panel:visible:not(.'+panelName+')').fadeOut(500, function(){
       console.log('out');
-      $('.'+panelName+':hidden').fadeIn(500, function(){console.log('in');});
-      console.log('out2');
     });
+    $('.'+panelName+':hidden').fadeIn(500, function(){console.log('in');});
+      //console.log('out2');
   });
   
   
