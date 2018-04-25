@@ -4,7 +4,8 @@ $(document).ready(() => {
     var panelName = $(this).attr('info');
     console.log(panelName);
     $('.panel').fadeOut(500, function(){
-      $('.'+panelName).fadeIn(500);
+      console.log('out');
+      $('.'+panelName).fadeIn(500, console.log('in'););
     });
   });
   
