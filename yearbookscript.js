@@ -1,8 +1,8 @@
 $(document).ready(() => {
   $('.link').click(function(){
     var panelName = $(this).attr('info');
-    $('.panel').hide(500, function(){
-      $('.'+panelName).show(500);
+    $('.panel').fadeOut(500, function(){
+      $('.'+panelName).fadeIn(500);
     });
   });
   
