@@ -1,20 +1,45 @@
 $(document).ready(() => {
-  $('.link').click(function(){
+	//$('.panel').css('left', '-100px');
+  $('.link').click(function() {
     console.log($(this).attr('info'));
     var panelName = $(this).attr('info');
     console.log(panelName);
-    $('.panel:visible:not(.'+panelName+')').fadeOut(500, function(){
+
+    var $panelHide = $('.panel:visible:not(#' + panelName + ')');
+    var $panelShow = $('#' + panelName + ':hidden');
+
+    var $thisPanel = $('#' + panelName);
+    //alert($thisPanel);
+    console.log($panelShow.outerWidth());
+    $panelShow.css('left', -$panelShow.outerWidth() + 'px').show().animate({
+      left: 0
+    }, 1000);
+    $panelHide.fadeOut(500, function(){
+    	$panelHide.css('left', -$panelHide.outerWidth() + 'px');
+    });
+    
+    
+
+
+    /*
+    $('.panel:visible:not(.' + panelName + ')').fadeOut(500, function() {
       console.log('out');
     });
-    $('.'+panelName+':hidden').fadeIn(500, function(){console.log('in');});
-      //console.log('out2');
+    $('.' + panelName + ':hidden').fadeIn(500, function() {
+      console.log('in');
+    });
+    //console.log('out2');*/
   });
-  
-  
-  
-  
-  
+
+  /*var $lefty = $(this).next();
+  $lefty.animate({
+    left: parseInt($lefty.css('left'), 10) == 0 ? -$lefty.outerWidth() : 0
+  });*/
+
+
+
+
   //$('.intro').show();
-  
-  
+
+
 });
