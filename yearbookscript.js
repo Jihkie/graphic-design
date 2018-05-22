@@ -11,10 +11,10 @@ $(document).ready(() => {
     var $thisPanel = $('#' + panelName);
     //alert($thisPanel);
     console.log($panelShow.outerWidth());
-    $panelShow.css('left', -$panelShow.outerWidth() + 'px').show().animate({
+    $panelShow.css('left', -$panelShow.outerWidth() + 'px').css({'overflow-y': 'hidden', 'padding-right': '15px'}).show().animate({
       left: 0
-    }, 1000);
-    $panelHide.fadeOut(500, function(){
+    }, 1000, function(){$panelShow.css({'overflow-y':'', 'padding-right':'5px'});});
+    $panelHide.css({'overflow-y': 'hidden', 'padding-right': '15px'}).fadeOut(500, function(){
     	$panelHide.css('left', -$panelHide.outerWidth() + 'px');
     });
     
