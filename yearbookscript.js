@@ -20,7 +20,7 @@ $(document).ready(() => {
     
     
     $panelShow
-      .css('left', -$panelShow.outerWidth() + 'px')
+      .css('left', '-100%')
       .css({
         'overflow-y': 'hidden', 
         'padding-right': '25px', 
@@ -47,7 +47,7 @@ $(document).ready(() => {
       .attr('animstate', 'out')
       .fadeOut(500, function(){
     	  $panelHide
-          .css('left', -$panelHide.outerWidth() + 'px')
+          .css('left', '-100%')
           .attr('animstate', 'off')
           .show(0)
         ;
