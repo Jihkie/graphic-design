@@ -171,3 +171,15 @@
   vertical-align:50%;
   position:relative;
 }
+.image-container {
+  max-height:100px;
+}
+.prg-img {
+  max-height:200px;
+}
+.i1 {
+  max-width:62%;
+}
+.i2 {
+  max-width:36%
+}
