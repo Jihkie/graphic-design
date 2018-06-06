@@ -1,22 +1,58 @@
 $(document).ready(() => {
 	//$('.panel').css('left', '-100px');
   $('.link').click(function() {
-    console.log($(this).attr('info'));
+    //console.log($(this).attr('info'));
     var panelName = $(this).attr('info');
-    console.log(panelName);
-
-    var $panelHide = $('.panel:visible:not(#' + panelName + ')');
-    var $panelShow = $('#' + panelName + ':hidden');
+    //console.log(panelName);
+    
+    var $panelHide = $('.panel[animstate=on]:not(#' + panelName + ')');
+    var $panelShow = $('#' + panelName + '[animstate=off]');
+    //console.log($panelHide);
 
     var $thisPanel = $('#' + panelName);
     //alert($thisPanel);
-    console.log($panelShow.outerWidth());
-    $panelShow.css('left', -$panelShow.outerWidth() + 'px').css({'overflow-y': 'hidden', 'padding-right': '15px'}).show().animate({
-      left: 0
-    }, 1000, function(){$panelShow.css({'overflow-y':'', 'padding-right':'5px'});});
-    $panelHide.css({'overflow-y': 'hidden', 'padding-right': '15px'}).fadeOut(500, function(){
-    	$panelHide.css('left', -$panelHide.outerWidth() + 'px');
-    });
+    //console.log($panelShow.outerWidth());
+    
+    
+    if($('[animstate="in"]')[0] != null)
+      return;
+    
+    
+    
+    $panelShow
+      .css('left', -$panelShow.outerWidth() + 'px')
+      .css({
+        'overflow-y': 'hidden', 
+        'padding-right': '25px', 
+        'z-index': '1'})
+      .attr('animstate', 'in')
+      .show()
+      .animate({left: 0}, 1000, function(){
+        $panelShow
+          .css({
+            'overflow-y':'', 
+            'padding-right':'15px'
+          })
+          .attr('animstate', 'on')
+        ;
+      })
+    ;
+    
+    $panelHide
+      .css({
+        'overflow-y': 'hidden', 
+        'padding-right': '25px', 
+        'z-index': '0'
+      })
+      .attr('animstate', 'out')
+      .fadeOut(500, function(){
+    	  $panelHide
+          .css('left', -$panelHide.outerWidth() + 'px')
+          .attr('animstate', 'off')
+          .show(0)
+        ;
+      })
+    ;
     
     
 
