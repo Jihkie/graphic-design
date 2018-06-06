@@ -107,7 +107,7 @@
 .panel {
   position:absolute;
   top:0;
-  left: -500px;
+  left: -100%;
   /*display:none;*/
   width: 100%;
   padding: 15px 25px 15px 15px;
